@@ -1,0 +1,118 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.bodyScreen {
+    -fx-background-color: #1A1C20;
+}
+
+.text {
+	-fx-text-fill: white;
+	-fx-font-family: Geist;
+}
+
+.fontfamily {
+    -fx-font-family: Geist;
+}
+
+.textfield {
+    -fx-background-color: transparent;
+    -fx-border-color: #F1F1F1;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-font-family: Geist;
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+}
+
+.textfield:focused {
+    
+}
+
+.loginButton {
+	-fx-text-fill: #121212;
+	-fx-font-size: 20;
+	-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-background-radius: 20;
+}
+
+.button:hover {
+	-fx-cursor: hand;
+    -fx-background-color: #BABABA;
+}
+
+#login {
+	-fx-background-color: #05BF5E;
+	-fx-background-radius: 25;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+#signup {
+	-fx-background-color: #262E36;
+	-fx-background-radius: 25;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+.circular-button {
+    -fx-background-radius: 50%;  /* Ensures round shape */
+    -fx-shape: "M 50, 0 A 50,50 0 1,1 50,100 A 50,50 0 1,1 50,0 Z"; /* Defines a circular clickable area */
+    -fx-border-radius: 50%;  /* Ensures the border follows the shape */
+    -fx-padding: 0;
+    -fx-background-color: transparent; /* Keeps background transparent */
+    -fx-border-color: white; /* Optional: if you want a border */
+    -fx-border-width: 2px; /* Adjust border thickness if needed */
+}
+
+.filled-dot {
+    -fx-fill: red;          /* Fills the circle with red */
+    -fx-stroke: lightblue;  /* Light blue border */
+    -fx-stroke-width: 2px;  /* Border thickness */
+}
+
+.empty-dot {
+    -fx-fill: white;
+}
+
+.error-dot {
+    -fx-fill: red;
+}
+
+#fontcard {
+	-fx-text-fill: white;
+	-fx-text-weight: bold;
+	-fx-font-size: 40;
+}
+
+#fontcard2 {
+	-fx-text-fill: white;
+	-fx-text-weight: bold;
+	-fx-font-size: 24;
+}
+
+#fontcard3 {
+	-fx-text-fill: white;
+	-fx-text-weight: bold;
+	-fx-font-size: 16;
+}
+
+.cardbg {
+	-fx-background-image: url("/images/p3.png");
+    -fx-background-size: cover;
+}
+
+.buttonsend {
+	-fx-background-color: #222C36;
+	-fx-background-radius: 30;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: Arial;
+}
+
+
+
+
+
+
+
+
+
+

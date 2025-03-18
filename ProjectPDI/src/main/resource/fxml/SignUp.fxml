@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.SignUpController">
+   <children>
+      <AnchorPane fx:id="step1Pane" prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css">
+         <children>
+            <Label contentDisplay="RIGHT" graphicTextGap="20.0" layoutX="40.0" layoutY="60.0" styleClass="text" stylesheets="@../css/application.css" text="Set up your Profie">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" />
+               </graphic>
+            </Label>
+            <Text fill="#88a1a1" layoutX="42.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Create an account so you can manage your money even better." wrappingWidth="328.08203125" />
+            <VBox layoutX="42.0" layoutY="174.0" prefHeight="403.0" prefWidth="328.0" spacing="25.0">
+               <children>
+                  <TextField fx:id="firstnameField" prefHeight="50.0" prefWidth="328.0" promptText="First Name" styleClass="textfield" stylesheets="@../css/application.css" />
+                  <TextField fx:id="lastnameField" prefHeight="50.0" prefWidth="328.0" promptText="Last Name" styleClass="textfield" stylesheets="@../css/application.css" />
+                  <TextField fx:id="emailField" prefHeight="50.0" prefWidth="328.0" promptText="Email" styleClass="textfield" stylesheets="@../css/application.css" />
+                  <TextField fx:id="passwordField" prefHeight="50.0" prefWidth="328.0" promptText="Password" styleClass="textfield" stylesheets="@../css/application.css" />
+                  <TextField fx:id="confirmField" prefHeight="50.0" prefWidth="328.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@../css/application.css" />
+                  <JFXCheckBox fx:id="checkBox" prefWidth="246.0" text="I'm at least 18 years old and agree to the " textFill="#88a1a1" unCheckedColor="#88a1a1">
+                     <VBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+               </children>
+            </VBox>
+            <Text fill="#88a1a1" layoutX="72.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="following terms:" />
+            <Text fill="#9389a1" layoutX="72.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By tapping Next. I've read and gree to the E-Sign Disc-" />
+            <Text fill="#88a1a1" layoutX="72.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="losure and Content to receive all communication" />
+            <Text fill="#88a1a1" layoutX="72.0" layoutY="652.0" strokeType="OUTSIDE" strokeWidth="0.0" text="electronically." />
+            <JFXButton id="login" fx:id="continueButton" layoutX="47.0" layoutY="728.0" onAction="#handleNextButtonAction" prefHeight="51.0" prefWidth="318.0" text="Continue" />
+            <JFXButton layoutX="328.0" layoutY="9.0" onAction="#switchToSignIn" styleClass="textfield" stylesheets="@../css/application.css" text="Sign In" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="15.0" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="38.0" layoutY="14.0" onAction="#handlePreviousButtonAction">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step2Pane" prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css" visible="false">
+         <children>
+            <JFXButton id="login" layoutX="57.0" layoutY="738.0" onAction="#handleNextButtonAction" prefHeight="51.0" prefWidth="318.0" text="Continue" />
+            <JFXButton id="login" layoutX="61.0" layoutY="247.0" prefHeight="25.0" prefWidth="142.0" styleClass="text" stylesheets="@../css/application.css" text="Choose from File" />
+            <JFXComboBox fx:id="profileChooser" layoutX="235.0" layoutY="247.0" minHeight="25.0" minWidth="142.0" promptText="Choose Profile Icon" />
+            <ImageView fitHeight="160.0" fitWidth="180.0" layoutX="126.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox layoutX="52.0" layoutY="300.0" prefHeight="374.0" prefWidth="328.0">
+               <children>
+                  <Label styleClass="text" stylesheets="@../css/application.css" text="Date of Birth">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateofbirthField" prefHeight="46.0" prefWidth="328.0" promptText="Enter your Birthday" style="-fx-background-color: transparent;" />
+                  <TextField fx:id="phonenumberField" prefHeight="50.0" prefWidth="328.0" promptText="Phone Number" styleClass="textfield" stylesheets="@../css/application.css">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="nationalidField" prefHeight="50.0" prefWidth="328.0" promptText="National ID" styleClass="textfield" stylesheets="@../css/application.css">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="countrycodeField" prefHeight="50.0" prefWidth="328.0" promptText="Country Code" styleClass="textfield" stylesheets="@../css/application.css">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+            </VBox>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="38.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handlePreviousButtonAction">
+               <graphic>
+                  <FontAwesomeIconView fx:id="backToSignUp" fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="338.0" layoutY="19.0" onAction="#switchToSignIn" styleClass="textfield" stylesheets="@../css/application.css" text="Sign In" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step3Pane" prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css" visible="false">
+         <children>
+            <JFXButton id="login" layoutX="47.0" layoutY="738.0" onAction="#registerUser" prefHeight="51.0" prefWidth="318.0" text="Sign Up" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="38.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handlePreviousButtonAction">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="131.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/passcode.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="126.0" layoutY="271.0" prefHeight="33.0" prefWidth="180.0" spacing="15.0">
+               <children>
+                  <Circle fx:id="dot1" fill="#9ba9b5" radius="15.0" stroke="#f8f8f8" strokeType="INSIDE" />
+                  <Circle fx:id="dot2" fill="#9ba9b5" radius="15.0" stroke="#f8f8f8" strokeType="INSIDE" />
+                  <Circle fx:id="dot3" fill="#9ba9b5" radius="15.0" stroke="#f8f8f8" strokeType="INSIDE" />
+                  <Circle fx:id="dot4" fill="#9ba9b5" radius="15.0" stroke="#f8f8f8" strokeType="INSIDE" />
+               </children>
+            </HBox>
+            <VBox layoutX="30.0" layoutY="347.0" prefHeight="380.0" prefWidth="343.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="numberButton1" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="1">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton2" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="2">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton3" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="3">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="numberButton4" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="4">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton5" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="5">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton6" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="6">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="134.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="numberButton7" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="7">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton8" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="8">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="numberButton9" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="9">
+                           <graphic>
+                              <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

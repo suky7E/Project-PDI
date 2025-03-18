@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.LoginController">
+   <children>
+      <Line endX="1.8822021484375" endY="246.0" layoutX="85.0" layoutY="102.0" startX="1.8822021484375" startY="-18.0" stroke="#a2abb1" />
+      <Line endX="25.3822021484375" endY="271.0" layoutX="95.0" layoutY="113.0" startX="277.3822021484375" startY="271.0" stroke="#a2abb1" />
+      <ImageView fitHeight="226.0" fitWidth="352.0" layoutX="46.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" rotate="-15.0" AnchorPane.rightAnchor="-30.0" AnchorPane.topAnchor="90.0">
+         <image>
+            <Image url="@/images/light card.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="58.0" layoutY="597.0" prefHeight="58.0" prefWidth="325.0">
+         <children>
+            <Text fill="#959799" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Weŕe excited to have you on board. " wrappingWidth="214.08203125" />
+            <Text fill="#959799" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="To start banking with Raboth, please verify your identify." wrappingWidth="318.08203125" />
+         </children>
+      </VBox>
+      <VBox layoutX="57.0" layoutY="465.0" prefHeight="120.0" prefWidth="298.0">
+         <children>
+            <Label styleClass="text" stylesheets="@../css/application.css" text="Welcome to ">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label styleClass="text" stylesheets="@../css/application.css" text="RaBoth ">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <JFXButton id="login" fx:id="loginButton" layoutX="47.0" layoutY="670.0" onAction="#switchToSignIn" prefHeight="51.0" prefWidth="318.0" text="Login" />
+      <JFXButton id="signup" fx:id="registerButton" layoutX="47.0" layoutY="728.0" onAction="#switchToSignUp" prefHeight="51.0" prefWidth="318.0" text="Sign Up" />
+      <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="57.0" layoutY="359.0" pickOnBounds="true">
+         <image>
+            <Image url="@/images/green diamond.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="226.0" fitWidth="352.0" layoutX="56.0" layoutY="164.0" pickOnBounds="true" rotate="-15.0" AnchorPane.rightAnchor="-80.0" AnchorPane.topAnchor="30.0">
+         <image>
+            <Image url="@/images/dark card.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

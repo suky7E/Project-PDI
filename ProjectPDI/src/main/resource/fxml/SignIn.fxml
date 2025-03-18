@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.LoginController">
+   <children>
+      <JFXButton id="login" layoutX="47.0" layoutY="737.0" onAction="#loginUser" prefHeight="51.0" prefWidth="318.0" text="Login" />
+      <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="81.0" layoutY="83.0" pickOnBounds="true">
+         <image>
+            <Image url="@/images/user.gif" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+      <TextField fx:id="loginPhoneNumber" layoutX="42.0" layoutY="359.0" prefHeight="50.0" prefWidth="328.0" promptText="Phone Number" styleClass="textfield" stylesheets="@../css/application.css" />
+      <PasswordField fx:id="loginPassword" layoutX="42.0" layoutY="450.0" minHeight="50.0" minWidth="328.0" promptText="Password" styleClass="textfield" stylesheets="@../css/application.css" />
+      <JFXButton layoutX="338.0" layoutY="19.0" onAction="#switchToSignUp" styleClass="textfield" stylesheets="@../css/application.css" text="Sign Up" AnchorPane.rightAnchor="45.0" />
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="48.0" layoutY="24.0" onAction="#back">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
