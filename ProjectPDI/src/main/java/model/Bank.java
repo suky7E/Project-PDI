@@ -15,6 +15,7 @@ public class Bank {
     private String cardnumber;
     private String cvv;
     private String expirydate;
+    private String balance;
 
     // Static instance to store logged-in user
     private static Bank loggedInUser = null;
@@ -91,6 +92,9 @@ public class Bank {
     
     public String getExpirydate() { return expirydate; }
     public void setExpirydate(String expirydate) { this.expirydate = expirydate; }
+    
+    public String getBalance() { return balance; }
+    public void setBalance(String balance) { this.balance = balance; }
 
     // Debugging: Print object details
     @Override

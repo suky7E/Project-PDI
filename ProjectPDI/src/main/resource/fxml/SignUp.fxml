@@ -60,8 +60,7 @@
       <AnchorPane fx:id="step2Pane" prefHeight="817.0" prefWidth="412.0" styleClass="bodyScreen" stylesheets="@../css/application.css" visible="false">
          <children>
             <JFXButton id="login" layoutX="57.0" layoutY="738.0" onAction="#handleNextButtonAction" prefHeight="51.0" prefWidth="318.0" text="Continue" />
-            <JFXButton id="login" layoutX="61.0" layoutY="247.0" prefHeight="25.0" prefWidth="142.0" styleClass="text" stylesheets="@../css/application.css" text="Choose from File" />
-            <JFXComboBox fx:id="profileChooser" layoutX="235.0" layoutY="247.0" minHeight="25.0" minWidth="142.0" promptText="Choose Profile Icon" />
+            <JFXComboBox fx:id="profileChooser" layoutX="144.0" layoutY="250.0" minHeight="25.0" minWidth="142.0" promptText="Choose Profile Icon" />
             <ImageView fitHeight="160.0" fitWidth="180.0" layoutX="126.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
             <VBox layoutX="52.0" layoutY="300.0" prefHeight="374.0" prefWidth="328.0">
                <children>
@@ -124,35 +123,35 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <JFXButton fx:id="numberButton1" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="1">
+                        <JFXButton fx:id="numberButton1" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 32;" styleClass="circular-button" text="1">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="System Bold" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton2" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="2">
+                        <JFXButton fx:id="numberButton2" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="2">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="System Bold" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton3" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="3">
+                        <JFXButton fx:id="numberButton3" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="3">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="System Bold" />
                            </font>
                         </JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <JFXButton fx:id="numberButton4" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="4">
+                        <JFXButton fx:id="numberButton4" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 32;" styleClass="circular-button" text="4">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
@@ -160,7 +159,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton5" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="5">
+                        <JFXButton fx:id="numberButton5" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="5">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
@@ -168,7 +167,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton6" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="6">
+                        <JFXButton fx:id="numberButton6" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="6">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
@@ -180,7 +179,7 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="134.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <JFXButton fx:id="numberButton7" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="circular-button" text="7">
+                        <JFXButton fx:id="numberButton7" buttonType="RAISED" contentDisplay="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-size: 32;" styleClass="circular-button" text="7">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
@@ -188,7 +187,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton8" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" styleClass="circular-button" text="8">
+                        <JFXButton fx:id="numberButton8" contentDisplay="CENTER" layoutX="124.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="8">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>
@@ -196,7 +195,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="numberButton9" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" styleClass="circular-button" text="9">
+                        <JFXButton fx:id="numberButton9" contentDisplay="CENTER" layoutX="192.0" layoutY="10.0" style="-fx-font-size: 32;" styleClass="circular-button" text="9">
                            <graphic>
                               <Circle fill="DODGERBLUE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
                            </graphic>

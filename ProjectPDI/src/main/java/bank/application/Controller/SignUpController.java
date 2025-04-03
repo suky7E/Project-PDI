@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
@@ -60,14 +61,22 @@ public class SignUpController implements Initializable {
     private String initialPasscode = "";
 
     private int currentStep = 1;
+    
+    private final Map<String, String> iconPaths = Map.of(
+    	    "Cat", "/images/cat.jpg",
+    	    "Dog", "/images/dog.png",
+    	    "Panda", "/images/panda.png",
+    	    "Tiger", "/images/tiger.png"
+    	);
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	Bank bank = new Bank();
         updateView();
         checkBox();
-        profileChooser.getItems().addAll(iconSelect);
-        profileChooser.setValue("Cat");
+        profileChooser.getItems().addAll(iconPaths.keySet());
+        profileChooser.setValue("Dog");
 
         dots = Arrays.asList(dot1, dot2, dot3, dot4);
         if (dots.contains(null)) {
@@ -130,7 +139,8 @@ public class SignUpController implements Initializable {
         String email = emailField.getText();
         String password = passwordField.getText();
         String confirmpassword = confirmField.getText();
-        String icon = profileChooser.getValue();
+        String selectedIcon = profileChooser.getValue();
+        String iconPath = iconPaths.getOrDefault(selectedIcon, "/images/dog.png");
         LocalDate intEventDate = dateofbirthField.getValue();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String dateofbirth = intEventDate.format(formatter);
@@ -138,7 +148,7 @@ public class SignUpController implements Initializable {
         String nationalid = nationalidField.getText();
         String countrycode = countrycodeField.getText();
         
-        if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() || password.isEmpty() || dateofbirth.isEmpty() || icon.isEmpty() || phonenumber.isEmpty() || nationalid.isEmpty() || countrycode.isEmpty()) {
+        if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() || password.isEmpty() || dateofbirth.isEmpty() || iconPath.isEmpty() || phonenumber.isEmpty() || nationalid.isEmpty() || countrycode.isEmpty()) {
             AlertUtil.showAlert("Error", "You must input your information before signing up.");
             return;
         }
@@ -167,7 +177,7 @@ public class SignUpController implements Initializable {
             stmt.setString(3, lastname);
             stmt.setString(4, email);
             stmt.setString(5, password);
-            stmt.setString(6, icon);
+            stmt.setString(6, iconPath);
             stmt.setString(7, dateofbirth);
             stmt.setString(8, phonenumber);
             stmt.setString(9, nationalid);
@@ -180,17 +190,6 @@ public class SignUpController implements Initializable {
             
             stmt.executeUpdate();
             AlertUtil.showAlert("Success", "You have successfully registered your account.");
-            switchToSignIn();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            AlertUtil.showAlert("Error", "Failed to register user. Please try again!");
-        }
-    }
-
-    @FXML
-    private void handleNextButtonAction() {
-        if (currentStep < 3) {
-            currentStep++;
             Bank bank = new Bank();
 			bank.setFirstname(firstnameField.getText());
             bank.setLastname(lastnameField.getText());
@@ -202,7 +201,21 @@ public class SignUpController implements Initializable {
             bank.setPhonenumber(phonenumberField.getText());
             bank.setNationalid(nationalidField.getText());
             bank.setCountrycode(countrycodeField.getText());
+            bank.setCardnumber(cardNumber);
+            bank.setCvv(cvv);
+            bank.setExpirydate(expiryDate);
 
+            switchToSignIn();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            AlertUtil.showAlert("Error", "Failed to register user. Please try again!");
+        }
+    }
+
+    @FXML
+    private void handleNextButtonAction() {
+        if (currentStep < 3) {
+            currentStep++;
             updateView();
         }
     }
@@ -229,39 +242,30 @@ public class SignUpController implements Initializable {
 
     public void switchToSignIn() throws IOException {
         try {
-            // Load the Login FXML
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
-
-            // Get the current stage from the current window
-            Stage stage = (Stage) (root.getScene().getWindow());
-
-            // Create a new scene and set it on the stage
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/SignIn.fxml"));
+            Stage stage = (Stage) continueButton.getScene().getWindow(); // Get stage from a known UI element
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            AlertUtil.showAlert("Error", "Failed to switch to Login page.");
+            AlertUtil.showAlert("Error", "Failed to switch to the main screen.");
         }
     }
 
 
     public void switchToMain() throws IOException {
         try {
-            // Load the Login FXML
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainScreen.fxml"));
-
-            // Get the current stage from the current window
-            Stage stage = (Stage) (root.getScene().getWindow());
-
-            // Create a new scene and set it on the stage
+            Stage stage = (Stage) continueButton.getScene().getWindow(); // Get stage from a known UI element
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            AlertUtil.showAlert("Error", "Failed to switch to Login page.");
+            AlertUtil.showAlert("Error", "Failed to switch to the main screen.");
         }
     }
+
 
 }

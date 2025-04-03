@@ -1,141 +1,400 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.AppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.AppController">
    <children>
-      <Pane layoutX="20.0" layoutY="124.0" opacity="0.23" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" />
-      <Pane layoutX="19.0" layoutY="129.0" prefHeight="228.0" prefWidth="362.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="129.0" />
-      <Button layoutX="86.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="View Profile &gt;" textFill="#eeeeee" AnchorPane.topAnchor="50.0" />
-      <Separator layoutX="5.0" layoutY="108.0" prefWidth="200.0" style="-fx-background-color: #302870;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0" />
-      <Label layoutX="94.0" layoutY="101.0" text="Hello, User!" textFill="#eeeeee" AnchorPane.topAnchor="35.0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Circle fill="#302870" layoutX="45.0" layoutY="118.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="25.0" />
-      <AnchorPane fx:id="card" layoutX="42.0" layoutY="193.0" prefHeight="133.0" prefWidth="342.0" styleClass="cardbg" stylesheets="@../css/application.css" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="140.0">
+      <AnchorPane prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" stylesheets="@../css/application.css">
          <children>
-            <Label id="fontcard3" layoutX="69.0" layoutY="55.0" opacity="0.5" stylesheets="@../css/application.css" text="Dollar Balance">
+            <Pane layoutX="20.0" layoutY="124.0" opacity="0.23" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" />
+            <Pane layoutX="19.0" layoutY="129.0" prefHeight="228.0" prefWidth="362.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="129.0" />
+            <Button layoutX="86.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="View Profile &gt;" textFill="#eeeeee" AnchorPane.topAnchor="50.0" />
+            <Separator layoutX="5.0" layoutY="108.0" prefWidth="200.0" style="-fx-background-color: #302870;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0" />
+            <Label fx:id="accountName" layoutX="94.0" layoutY="101.0" text="Hello, User!" textFill="#eeeeee" AnchorPane.topAnchor="35.0">
                <font>
-                  <Font name="Cambria Math" size="12.0" />
-               </font></Label>
-            <Label id="fontcard" fx:id="mainBal" layoutX="63.0" layoutY="6.0" prefHeight="50.0" prefWidth="117.0" stylesheets="@../css/application.css" text="1,426" />
-            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true">
-               <image>
-                  <Image url="@/images/coin.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="1.0" />
-               </effect>
-            </ImageView>
-         </children>
-         <effect>
-            <ColorAdjust saturation="-1.0" />
-         </effect>
-      </AnchorPane>
-      <HBox layoutX="32.0" layoutY="340.0" prefHeight="67.0" prefWidth="348.0" spacing="50.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="290.0">
-         <children>
-            <JFXButton graphicTextGap="10.0" prefHeight="48.0" prefWidth="149.0" styleClass="buttonsend" text="Send">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
-                  	<image>
-                  		<Image url="@/images/send-money.png" />
-               		</image>
-                     <effect>
-                        <ColorAdjust brightness="1.0" />
-                     </effect>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="149.0" styleClass="buttonsend" text="Receive">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
-                  	<image>
-                  		<Image url="@/images/dollar.png" />
-               		</image>
-                     <effect>
-                        <ColorAdjust brightness="1.0" />
-                     </effect>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </children>
-      </HBox>
-      <Pane layoutX="36.0" layoutY="378.0" opacity="0.23" prefHeight="137.0" prefWidth="340.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.topAnchor="378.0" />
-      <JFXButton contentDisplay="TOP" layoutX="45.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Card">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/images/credit-card.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="1.0" />
-               </effect>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton contentDisplay="TOP" layoutX="55.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Top Up" AnchorPane.rightAnchor="45.0">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/images/back-to-top.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="1.0" />
-               </effect>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <Pane layoutX="20.0" layoutY="531.0" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: #021A27; -fx-background-radius: 30;">
-         <children>
-            <VBox prefHeight="238.0" prefWidth="372.0" style="-fx-background-radius: 30;">
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="card" layoutX="42.0" layoutY="193.0" prefHeight="133.0" prefWidth="342.0" styleClass="cardbg" stylesheets="@../css/application.css" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="140.0">
                <children>
-                  <VBox prefHeight="118.0" prefWidth="372.0">
+                  <Label id="fontcard3" layoutX="69.0" layoutY="55.0" opacity="0.5" stylesheets="@../css/application.css" text="Dollar Balance">
+                     <font>
+                        <Font name="Cambria Math" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label id="fontcard" fx:id="mainBal" layoutX="63.0" layoutY="6.0" prefHeight="58.0" prefWidth="227.0" stylesheets="@../css/application.css" text="1,426" />
+                  <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@/images/coin.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+               <effect>
+                  <ColorAdjust saturation="-1.0" />
+               </effect>
+            </AnchorPane>
+            <HBox layoutX="32.0" layoutY="340.0" prefHeight="67.0" prefWidth="348.0" spacing="50.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="290.0">
+               <children>
+                  <JFXButton graphicTextGap="10.0" onAction="#goToSend" prefHeight="48.0" prefWidth="149.0" styleClass="buttonsend" text="Send">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@/images/send-money.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="1.0" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="149.0" styleClass="buttonsend" text="Receive">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@/images/dollar.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="1.0" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Pane layoutX="36.0" layoutY="378.0" opacity="0.23" prefHeight="137.0" prefWidth="340.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.topAnchor="378.0" />
+            <JFXButton contentDisplay="TOP" layoutX="45.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" onAction="#goToCard" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Card">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/images/credit-card.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="55.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" onAction="#goToTopUp" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Top Up" AnchorPane.rightAnchor="45.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/images/back-to-top.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fx:id="profileImage" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="cardInfo" prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" visible="false">
+         <children>
+            <AnchorPane layoutX="36.0" layoutY="96.0" prefHeight="228.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to right, #6F60C3, #3f2b96); -fx-background-radius: 20;">
+               <children>
+                  <VBox prefHeight="228.0" prefWidth="340.0" style="-fx-background-radius: 30;">
                      <children>
-                        <Label id="fontcard2" text="Income" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="20.0" top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label id="fontcard2" layoutX="30.0" layoutY="30.0" text="0$" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="20.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <Separator opacity="0.2" prefWidth="200.0" />
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="372.0">
-                     <children>
-                        <Label id="fontcard2" text="Expense" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="20.0" top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label id="fontcard2" layoutX="30.0" layoutY="30.0" text="0$" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets left="20.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox prefHeight="75.0" prefWidth="340.0">
+                           <children>
+                              <VBox prefHeight="75.0" prefWidth="199.0">
+                                 <children>
+                                    <Label id="fontcard4" text="Raboth" textFill="WHITE">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Separator prefWidth="20.0">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="90.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label id="fontcard3" fx:id="userName" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label id="fontcard2" fx:id="accountNumber" layoutX="30.0" layoutY="25.0" prefHeight="35.0" prefWidth="289.0" text="Label" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow height="9.28" radius="1.8199999999999998" width="0.0" />
+                                 </effect>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="80.0" prefWidth="164.0">
+                                       <children>
+                                          <Label id="fontcard3" opacity="0.45" text="EXPIRY:">
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label id="fontcard3" fx:id="expiryDate" text="Label">
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="65.0" fitWidth="110.0" pickOnBounds="true">
+                                       <HBox.margin>
+                                          <Insets left="45.0" top="5.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@/images/Mastercard-logo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                </children>
+            </AnchorPane>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="35.0" onAction="#backFromCard" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+            <VBox layoutX="36.0" layoutY="346.0" prefHeight="200.0" prefWidth="340.0">
+               <children>
+                  <Label id="fontcard2" text="MasterCard Vitual Debit Card" />
+                  <HBox prefHeight="55.0" prefWidth="340.0" spacing="15.0">
+                     <children>
+                        <Label id="fontcard3" text="Available Balance:" />
+                        <Label id="fontcard3" fx:id="cardBal" layoutX="10.0" layoutY="10.0" text="Balance" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="110.0" prefWidth="340.0" spacing="15.0" style="-fx-background-color: #021A27; -fx-background-radius: 25;">
+                     <children>
+                        <JFXButton contentDisplay="TOP" onAction="#showCVV" prefHeight="84.0" prefWidth="145.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Show CVV">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/cvv.png" />
+                                 </image>
+                                 <effect>
+                                    <ColorAdjust brightness="1.0" />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" layoutX="108.0" layoutY="23.0" onAction="#hideCVV" prefHeight="84.0" prefWidth="145.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Hide CVV">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/cvv.png" />
+                                 </image>
+                                 <effect>
+                                    <ColorAdjust brightness="1.0" />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="cvvPane" layoutX="36.0" layoutY="96.0" prefHeight="228.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to right, #6F60C3, #3f2b96); -fx-background-radius: 20;" visible="false">
+               <children>
+                  <VBox layoutY="168.0" prefHeight="60.0" prefWidth="156.0">
+                     <children>
+                        <Label id="fontcard3" text="CVV:">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="fontcard3" fx:id="cvvNum" layoutX="10.0" layoutY="10.0" text="cvv">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="53.0" prefWidth="310.0">
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="310.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@/images/barcode.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topUpPane" prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" visible="false">
+         <children>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#backFromTopUp" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+            <VBox layoutX="36.0" layoutY="105.0" prefHeight="238.0" prefWidth="340.0">
+               <children>
+                  <Label id="fontcard" text="Top-up" />
+                  <Label id="fontcard3" opacity="0.8" text="Amount">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="topUpAmount" prefHeight="50.0" prefWidth="340.0" styleClass="textfield">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <JFXButton id="signup" layoutX="47.0" layoutY="744.0" onAction="#confirmTopUp" prefHeight="51.0" prefWidth="318.0" style="-fx-background-color: #050608;" text="Confirm" />
+            <AnchorPane fx:id="blur1" opacity="0.85" prefHeight="818.0" prefWidth="412.0" style="-fx-background-color: #021925;" visible="false" />
+            <VBox fx:id="popUp" alignment="CENTER" layoutX="35.0" layoutY="504.0" prefHeight="291.0" prefWidth="342.0" spacing="10.0" style="-fx-background-color: #111111; -fx-background-radius: 25;" visible="false">
+               <children>
+                  <Label id="fontcard2" text="Hooray! It went good" />
+                  <VBox alignment="CENTER" prefHeight="156.0" prefWidth="342.0" style="-fx-background-color: #1B1B1B; -fx-background-radius: 25;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label id="fontcard" fx:id="amountTopUp" style="-fx-text-fill: #98A4FC;" text="Label" />
+                        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="302.0" spacing="10.0">
+                           <children>
+                              <Label id="fontcard3" text="From card ">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label id="fontcard3" fx:id="infoCard" text="card" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <JFXButton id="signup" onAction="#backFromTopUp" prefHeight="51.0" prefWidth="318.0" style="-fx-background-color: #050608;" text="Continue" />
+               </children>
             </VBox>
          </children>
-      </Pane>
+      </AnchorPane>
+      <AnchorPane fx:id="sendPane" prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" visible="false">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="309.0" prefHeight="509.0" prefWidth="412.0" style="-fx-background-color: #1F2D38;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-border-color: #55636E; -fx-border-radius: 10;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/images/user-profile.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="receiverNumber" prefHeight="59.0" prefWidth="286.0" promptText="Enter receiver account number" style="-fx-background-color: transparent; -fx-border-color: transparent;" styleClass="textfield">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-border-color: #55636E; -fx-border-radius: 10;">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/images/coin.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="sendAmount" prefHeight="59.0" prefWidth="286.0" promptText="Amount" style="-fx-background-color: transparent; -fx-border-color: transparent;" styleClass="textfield">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <JFXButton id="signup" onAction="#confirmSend" prefHeight="51.0" prefWidth="318.0" style="-fx-background-color: #050608;" text="Confirm">
+                     <VBox.margin>
+                        <Insets top="195.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#backFromSend" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="25" />
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="159.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/transfer.png" />
+               </image>
+            </ImageView>
+            <Label id="fontcard2" layoutX="71.0" layoutY="211.0" text="Transfer to other Account" />
+            <AnchorPane fx:id="blur2" opacity="0.85" prefHeight="818.0" prefWidth="412.0" style="-fx-background-color: #021925;" visible="false" />
+            <VBox fx:id="popUp1" alignment="CENTER" layoutX="35.0" layoutY="504.0" prefHeight="291.0" prefWidth="342.0" spacing="10.0" style="-fx-background-color: #111111; -fx-background-radius: 25;" visible="false">
+               <children>
+                  <Label id="fontcard2" text="Hooray! It went good" />
+                  <VBox alignment="CENTER" prefHeight="156.0" prefWidth="342.0" style="-fx-background-color: #1B1B1B; -fx-background-radius: 25;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label id="fontcard" fx:id="amountSend" style="-fx-text-fill: #98A4FC;" text="Label" />
+                        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="302.0" spacing="10.0">
+                           <children>
+                              <Label id="fontcard3" text="to card ">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label id="fontcard3" fx:id="otherCard" text="card" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <JFXButton id="signup" onAction="#backFromSend" prefHeight="51.0" prefWidth="318.0" style="-fx-background-color: #050608;" text="Continue" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

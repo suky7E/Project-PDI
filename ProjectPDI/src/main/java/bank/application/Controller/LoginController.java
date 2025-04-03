@@ -76,7 +76,11 @@ public class LoginController implements Initializable{
 	            loggedInUser.setNationalid(rs.getString("national_id"));
 	            loggedInUser.setCountrycode(rs.getString("country_code"));
 	            loggedInUser.setPasscode(rs.getString("passcode"));
-
+	            loggedInUser.setCvv(rs.getString("cvv"));
+	            loggedInUser.setCardnumber(rs.getString("card_number"));
+	            loggedInUser.setExpirydate(rs.getString("expiry_date"));
+	            loggedInUser.setBalance(rs.getString("balance"));
+	            loggedInUser.setIcon(rs.getString("profile_icon"));
 	            // Store logged-in user globally
 	            Bank.setLoggedInUser(loggedInUser);
 
@@ -98,7 +102,7 @@ public class LoginController implements Initializable{
 	 public void back(ActionEvent event) throws IOException {
 		    try {
 		        // Load the SignIn FXML
-		        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+		        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Start.fxml"));
 
 		        // Get the current stage (window) from the event
 		        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

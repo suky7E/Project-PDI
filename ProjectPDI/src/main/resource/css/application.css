@@ -39,6 +39,10 @@
     -fx-background-color: #182023;
 }
 
+.button:focused {
+    -fx-background-color: #8491FE;
+}
+
 #login {
 	-fx-background-color: #05BF5E;
 	-fx-background-radius: 25;
@@ -92,6 +96,12 @@
 	-fx-text-fill: white;
 	-fx-text-weight: bold;
 	-fx-font-size: 16;
+}
+
+#fontcard4 {
+	-fx-text-fill: white;
+	-fx-text-weight: bold;
+	-fx-font-size: 28;
 }
 
 .buttonsend {

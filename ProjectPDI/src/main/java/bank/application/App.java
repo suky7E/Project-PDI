@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Start.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.getIcons().add(new Image("/images/bankIcon.png"));
