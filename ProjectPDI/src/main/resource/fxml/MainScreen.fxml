@@ -15,9 +15,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #07090A;" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.AppController">
+<AnchorPane prefHeight="817.0" prefWidth="412.0" style="-fx-background-color: #012130;" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bank.application.Controller.AppController">
    <children>
-      <Pane layoutX="19.0" layoutY="129.0" opacity="0.2" prefHeight="228.0" prefWidth="362.0" style="-fx-background-color: #2B3436; -fx-background-radius: 30;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="129.0" />
+      <Pane layoutX="20.0" layoutY="124.0" opacity="0.23" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" />
+      <Pane layoutX="19.0" layoutY="129.0" prefHeight="228.0" prefWidth="362.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="129.0" />
       <Button layoutX="86.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="View Profile &gt;" textFill="#eeeeee" AnchorPane.topAnchor="50.0" />
       <Separator layoutX="5.0" layoutY="108.0" prefWidth="200.0" style="-fx-background-color: #302870;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0" />
       <Label layoutX="94.0" layoutY="101.0" text="Hello, User!" textFill="#eeeeee" AnchorPane.topAnchor="35.0">
@@ -32,14 +33,13 @@
                <font>
                   <Font name="Cambria Math" size="12.0" />
                </font></Label>
-            <Label id="fontcard" layoutX="63.0" layoutY="6.0" prefHeight="50.0" prefWidth="117.0" stylesheets="@../css/application.css" text="1,426" />
-            <Circle layoutX="33.0" layoutY="35.0" radius="20.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label id="fontcard" fx:id="mainBal" layoutX="63.0" layoutY="6.0" prefHeight="50.0" prefWidth="117.0" stylesheets="@../css/application.css" text="1,426" />
             <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true">
                <image>
                   <Image url="@/images/coin.png" />
                </image>
                <effect>
-                  <ColorAdjust brightness="0.5" />
+                  <ColorAdjust brightness="1.0" />
                </effect>
             </ImageView>
          </children>
@@ -75,15 +75,67 @@
             </JFXButton>
          </children>
       </HBox>
-      <VBox layoutX="19.0" layoutY="496.0" prefHeight="378.0" prefWidth="348.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="440.0">
+      <Pane layoutX="36.0" layoutY="378.0" opacity="0.23" prefHeight="137.0" prefWidth="340.0" style="-fx-background-color: #050608; -fx-background-radius: 30;" AnchorPane.topAnchor="378.0" />
+      <JFXButton contentDisplay="TOP" layoutX="45.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Card">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/credit-card.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="TOP" layoutX="55.0" layoutY="387.0" minHeight="118.0" minWidth="148.0" style="-fx-background-color: #050608;" styleClass="buttonsend" text="Top Up" AnchorPane.rightAnchor="45.0">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/back-to-top.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Pane layoutX="20.0" layoutY="531.0" prefHeight="238.0" prefWidth="372.0" style="-fx-background-color: #021A27; -fx-background-radius: 30;">
          <children>
-            <Label id="fontcard2" text="Transaction">
-               <VBox.margin>
-                  <Insets left="10.0" />
-               </VBox.margin>
-            </Label>
+            <VBox prefHeight="238.0" prefWidth="372.0" style="-fx-background-radius: 30;">
+               <children>
+                  <VBox prefHeight="118.0" prefWidth="372.0">
+                     <children>
+                        <Label id="fontcard2" text="Income" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="fontcard2" layoutX="30.0" layoutY="30.0" text="0$" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Separator opacity="0.2" prefWidth="200.0" />
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="372.0">
+                     <children>
+                        <Label id="fontcard2" text="Expense" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="fontcard2" layoutX="30.0" layoutY="30.0" text="0$" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-      <Pane layoutX="35.0" layoutY="356.0" opacity="0.2" prefHeight="334.0" prefWidth="362.0" style="-fx-background-color: #060609; -fx-background-radius: 20;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="480.0" />
+      </Pane>
    </children>
 </AnchorPane>

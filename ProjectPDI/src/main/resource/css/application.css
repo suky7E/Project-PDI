@@ -36,7 +36,7 @@
 
 .button:hover {
 	-fx-cursor: hand;
-    -fx-background-color: #BABABA;
+    -fx-background-color: #182023;
 }
 
 #login {
@@ -94,13 +94,8 @@
 	-fx-font-size: 16;
 }
 
-.cardbg {
-	-fx-background-image: url("/images/p3.png");
-    -fx-background-size: cover;
-}
-
 .buttonsend {
-	-fx-background-color: #222C36;
+	-fx-background-color: transparent;
 	-fx-background-radius: 30;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;

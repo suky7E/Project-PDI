@@ -10,6 +10,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.UUID;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
@@ -28,6 +30,8 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import utility.AlertUtil;
 import utility.PasscodeHandler;
+import model.BankCard;
+import model.Bank;
 
 public class SignUpController implements Initializable {
     
@@ -59,6 +63,7 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    	Bank bank = new Bank();
         updateView();
         checkBox();
         profileChooser.getItems().addAll(iconSelect);
@@ -74,6 +79,7 @@ public class SignUpController implements Initializable {
             if (!isConfirmingPasscode) {
                 // First passcode entry
                 initialPasscode = passcodeHandler.getCorrectPasscode();
+                bank.setPasscode(initialPasscode);
                 isConfirmingPasscode = true;
                 AlertUtil.showAlert("Confirm Passcode", "Enter your passcode again to Sign Up.");
                 passcodeHandler.resetPasscode(); 
@@ -87,7 +93,12 @@ public class SignUpController implements Initializable {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-                    switchToMain();
+                    try {
+						switchToMain();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                 } else {
                     AlertUtil.showAlert("Error", "Passcodes do not match! Try again.");
                     passcodeHandler.resetPasscode();
@@ -131,40 +142,45 @@ public class SignUpController implements Initializable {
             AlertUtil.showAlert("Error", "You must input your information before signing up.");
             return;
         }
-
         if (!password.equals(confirmpassword)) {
             AlertUtil.showAlert("Error", "Passwords do not match. Please try again.");
             return;
         }
-
-        if (password.contains(" ") || firstname.contains(" ") || lastname.contains(" ")) {
-            AlertUtil.showAlert("Error", "Input fields should not contain spaces.");
-            return;
-        }
-
         if (initialPasscode.isEmpty()) {
             AlertUtil.showAlert("Error", "Please set up and confirm your passcode before continuing.");
             return;
         }
+        
+        String passcode = initialPasscode;
+        
+        String userId = UUID.randomUUID().toString();
+        BankCard card = new BankCard();
+        String cardNumber = card.generateCardNumber("4567");
+        String cvv = card.generateCVV();
+        String expiryDate = card.generateExpiryDate();
+        double balance = 0.0;
 
         try (Connection conn = ConnectBankUser.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO users (firstname, lastname, email, password, profile_icon, date_of_birth, phone_number, national_id, country_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-
-            stmt.setString(1, firstname);
-            stmt.setString(2, lastname);
-            stmt.setString(3, email);
-            stmt.setString(4, password);
-            stmt.setString(5, icon);
-            stmt.setString(6, dateofbirth);
-            stmt.setString(7, phonenumber);
-            stmt.setString(8, nationalid);
-            stmt.setString(9, countrycode);
+             PreparedStatement stmt = conn.prepareStatement("INSERT INTO users (user_id, firstname, lastname, email, password, profile_icon, date_of_birth, phone_number, national_id, country_code, passcode, card_number, cvv, expiry_date, balance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");) {
+            stmt.setString(1, userId);
+            stmt.setString(2, firstname);
+            stmt.setString(3, lastname);
+            stmt.setString(4, email);
+            stmt.setString(5, password);
+            stmt.setString(6, icon);
+            stmt.setString(7, dateofbirth);
+            stmt.setString(8, phonenumber);
+            stmt.setString(9, nationalid);
+            stmt.setString(10, countrycode);
+            stmt.setString(11, passcode);
+            stmt.setString(12, cardNumber);
+            stmt.setString(13, cvv);
+            stmt.setString(14, expiryDate);
+            stmt.setDouble(15, balance);
             
             stmt.executeUpdate();
-            
             AlertUtil.showAlert("Success", "You have successfully registered your account.");
             switchToSignIn();
-            
         } catch (SQLException e) {
             e.printStackTrace();
             AlertUtil.showAlert("Error", "Failed to register user. Please try again!");
@@ -175,6 +191,18 @@ public class SignUpController implements Initializable {
     private void handleNextButtonAction() {
         if (currentStep < 3) {
             currentStep++;
+            Bank bank = new Bank();
+			bank.setFirstname(firstnameField.getText());
+            bank.setLastname(lastnameField.getText());
+            bank.setEmail(emailField.getText());
+            bank.setPassword(passwordField.getText());
+            bank.setConfirmpassword(confirmField.getText());
+            bank.setIcon(profileChooser.getValue());
+            bank.setDateofbirth(dateofbirthField.getValue().toString());
+            bank.setPhonenumber(phonenumberField.getText());
+            bank.setNationalid(nationalidField.getText());
+            bank.setCountrycode(countrycodeField.getText());
+
             updateView();
         }
     }
@@ -199,28 +227,40 @@ public class SignUpController implements Initializable {
         checkBox.setOnAction(e -> continueButton.setDisable(!checkBox.isSelected()));
     }
 
-    public void switchToSignIn() {
+    public void switchToSignIn() throws IOException {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/SignIn.fxml"));
-            stage = (Stage) continueButton.getScene().getWindow(); 
+            // Load the Login FXML
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+
+            // Get the current stage from the current window
+            Stage stage = (Stage) (root.getScene().getWindow());
+
+            // Create a new scene and set it on the stage
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            AlertUtil.showAlert("Error", "Failed to load the main screen.");
+            AlertUtil.showAlert("Error", "Failed to switch to Login page.");
         }
     }
-    public void switchToMain() {
+
+
+    public void switchToMain() throws IOException {
         try {
+            // Load the Login FXML
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainScreen.fxml"));
-            stage = (Stage) continueButton.getScene().getWindow(); 
+
+            // Get the current stage from the current window
+            Stage stage = (Stage) (root.getScene().getWindow());
+
+            // Create a new scene and set it on the stage
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            AlertUtil.showAlert("Error", "Failed to load the main screen.");
+            AlertUtil.showAlert("Error", "Failed to switch to Login page.");
         }
     }
 
